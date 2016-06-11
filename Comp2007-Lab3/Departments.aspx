@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-offset-2 col-md-8">
                 <h1>Department List</h1>
-                <a href="DepartmentDetails.aspx" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>Add Student</a>
+                <a href="DepartmentDetails.aspx" class="btn btn-success btn-sm"><i class="fa fa-plus"></i> Add Department</a>
                 <div>
                     <label>Records Per Page:</label>
                     <asp:DropDownList ID="DepartmentsDropDownList" runat="server" AutoPostBack="true" CssClass="btn btn-default btn-sm dropdown-toggle"
@@ -18,13 +18,14 @@
                     </asp:DropDownList>
 
                 </div>
-                <asp:GridView runat="server" CssClass="table table-bordered table-striped table-hover pagination-ys"
-                    ID="DepartmentsGridView" AutoGenerateColumns="false"
-                    OnRowDeleting="DepartmentsGridView_RowDeleting"
-                    DataKeyNames="DepartmentID"
-                    AllowPaging="true" PageSize="3" OnPageIndexChanging="DepartmentsGridView_PageIndexChanging"
-                    AllowSorting="true" OnSorting="DepartmentsGridView_Sorting"
-                    OnRowDataBound="DepartmentsGridView_RowDataBound">
+                
+                <asp:GridView runat="server" CssClass="table table-bordered table-striped table-hover"
+                    ID="DepartmentsGridView" AutoGenerateColumns="false" DataKeyNames="DepartmentID"
+                    OnRowDeleting="DepartmentsGridView_RowDeleting" AllowPaging="true" PageSize="3"
+                    OnPageIndexChanging="DepartmentsGridView_PageIndexChanging" AllowSorting="true"
+                    OnSorting="DepartmentsGridView_Sorting" OnRowDataBound="DepartmentsGridView_RowDataBound" 
+                    PagerStyle-CssClass="pagination-ys">
+
                     <Columns>
                         <asp:BoundField DataField="DepartmentID" HeaderText="Department ID" Visible="true" SortExpression="DepartmentID" />
                         <asp:BoundField DataField="Name" HeaderText="Name" Visible="true" SortExpression="Name" />

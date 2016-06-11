@@ -40,11 +40,11 @@ namespace Comp2007_Lab3 {
                 //create query string
                 string SortString = Session["SortColumn"].ToString() + " " + Session["SortDirection"].ToString();
                 // query the Students Table using EF and LINQ
-                var Students = (from allDepartments in db.Departments
+                var Departments = (from allDepartments in db.Departments
                                 select  allDepartments);
 
                 // bind the result to the GridView
-                DepartmentsGridView.DataSource = Students.AsQueryable().OrderBy(SortString).ToList();
+                DepartmentsGridView.DataSource = Departments.AsQueryable().OrderBy(SortString).ToList();
                 DepartmentsGridView.DataBind();
             }
         }
